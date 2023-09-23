@@ -5,11 +5,13 @@ const {
   default: DIContainer,
 } = require('rsdi');
 const configureSequelize = require('./configDb');
-const CategoriaModel = require('../trailerflix/model/categoriaModel');
-const TrailerflixController = require('../trailerflix/controller/trailerflixController');
-const TrailerflixRepository = require('../trailerflix/repository/trailerflixRepository');
-const TrailerflixService = require('../trailerflix/service/trailerflixService');
-const VistaCatalogoModel = require('../trailerflix/model/vistaCatalogoModel');
+const {
+  CategoriaModel,
+  TrailerflixController,
+  TrailerflixRepository,
+  TrailerflixService,
+  VistaCatalogoModel,
+} = require('../trailerflix/module');
 
 const configureCategoriaModel = (container) => CategoriaModel.setup(container.get('Sequelize'));
 const configureVistaModel = (container) => VistaCatalogoModel.setup(container.get('Sequelize'));

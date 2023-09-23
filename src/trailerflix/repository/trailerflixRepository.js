@@ -35,7 +35,7 @@ class TrailerflixRepository {
       where: { titulo: { [Op.like]: `%${nombre}%` } },
     });
 
-    if (contenido.length === 0) throw new Error(`No se encontraron series o peliculas con el nombre: ${nombre}`);
+    if (contenido.length === 0) throw new Error(`No se encontraron series o peliculas con nombre: ${nombre}`);
 
     return contenido;
   }
@@ -55,11 +55,10 @@ class TrailerflixRepository {
       where: { categoria: `${categoria}` },
     });
 
-    if (contenido.length === 0) throw new Error(`No se encontraron resultados con categoria: ${categoria}`);
+    if (contenido.length === 0) throw new Error(`No se encontraron series o peliculas con categoria: ${categoria}`);
 
     return contenido;
   }
-
 }
 
 module.exports = TrailerflixRepository;
