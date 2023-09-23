@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 
-class CategoriaModel extends Model {
+class GeneroMultimedia extends Model {
 
   static setup(sequelizeInstance) {
-    CategoriaModel.init(
+    GeneroMultimedia.init(
       {
         id: {
           type: DataTypes.INTEGER,
@@ -12,23 +12,26 @@ class CategoriaModel extends Model {
           allowNull: false,
           unique: true,
         },
-        tipoCategoria: {
-          type: DataTypes.STRING,
+        catalogoId: {
+          type: DataTypes.INTEGER,
           allowNull: false,
-          unique: true,
+        },
+        generoId: {
+          type: DataTypes.INTEGER,
+          allowNull: false,
         },
       },
       {
         sequelize: sequelizeInstance,
-        tableName: 'Categoria',
-        modelName: 'categoria',
+        tableName: 'Genero_multimedia',
+        modelName: 'genero_multimedia',
         underscored: true,
-        timestamps: false,
+        timestamps: true,
       },
     );
 
-    return CategoriaModel;
+    return GeneroMultimedia;
   }
 }
 
-module.exports = CategoriaModel;
+module.exports = GeneroMultimedia;
