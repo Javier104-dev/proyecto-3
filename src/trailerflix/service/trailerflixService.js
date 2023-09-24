@@ -12,30 +12,29 @@ class TrailerflixService {
     return this.trailerflixRepository.getCatalogo();
   }
 
-  async getContenidoId(id) {
+  async getCatalogoId(id) {
     if (!Number(id)) throw new Error('El id debe ser un numero valido');
 
-    return this.trailerflixRepository.getContenidoId(id);
+    return this.trailerflixRepository.getCatalogoId(id);
   }
 
-  async getContenidoNombre(nombre) {
+  async getCatalogoNombre(nombre) {
     if (!nombre) throw new Error('El nombre no esta definido');
 
-    return this.trailerflixRepository.getContenidoNombre(nombre);
+    return this.trailerflixRepository.getCatalogoNombre(nombre);
   }
 
-  async getContenidoGenero(genero) {
+  async getCatalogoGenero(genero) {
     if (!genero) throw new Error('El genero no esta definido');
 
-    return this.trailerflixRepository.getContenidoGenero(genero);
+    return this.trailerflixRepository.getCatalogoGenero(genero);
   }
 
-  async getContenidoCategoria(categoria) {
+  async getCatalogoCategoria(categoria) {
     if (!categoria) throw new Error('La categoria no esta definido');
 
-    return this.trailerflixRepository.getContenidoCategoria(categoria);
+    return this.trailerflixRepository.getCatalogoCategoria(categoria);
   }
-
 }
 
 module.exports = TrailerflixService;

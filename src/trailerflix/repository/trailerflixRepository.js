@@ -22,7 +22,7 @@ class TrailerflixRepository {
     return catalogo;
   }
 
-  async getContenidoId(id) {
+  async getCatalogoId(id) {
     const contenido = await this.vistaCatalogoModel.findByPk(id);
 
     if (!contenido) throw new Error(`No se encontraron registros con el id: ${id}`);
@@ -30,7 +30,7 @@ class TrailerflixRepository {
     return contenido;
   }
 
-  async getContenidoNombre(nombre) {
+  async getCatalogoNombre(nombre) {
     const contenido = await this.vistaCatalogoModel.findAll({
       where: { titulo: { [Op.like]: `%${nombre}%` } },
     });
@@ -40,7 +40,7 @@ class TrailerflixRepository {
     return contenido;
   }
 
-  async getContenidoGenero(genero) {
+  async getCatalogoGenero(genero) {
     const contenido = await this.vistaCatalogoModel.findAll({
       where: { genero: { [Op.like]: `%${genero}%` } },
     });
@@ -50,12 +50,12 @@ class TrailerflixRepository {
     return contenido;
   }
 
-  async getContenidoCategoria(categoria) {
+  async getCatalogoCategoria(categoria) {
     const contenido = await this.vistaCatalogoModel.findAll({
       where: { categoria: `${categoria}` },
     });
 
-    if (contenido.length === 0) throw new Error(`No se encontraron series o peliculas con categoria: ${categoria}`);
+    if (contenido.length === 0) throw new Error(`No se encontraron filmografias con categoria: ${categoria}`);
 
     return contenido;
   }
