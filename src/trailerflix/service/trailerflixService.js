@@ -31,7 +31,7 @@ class TrailerflixService {
   }
 
   async getCatalogoCategoria(categoria) {
-    if (!categoria) throw new Error('La categoria no esta definido');
+    if (!categoria) throw new Error('La categoria no esta definida');
 
     return this.trailerflixRepository.getCatalogoCategoria(categoria);
   }

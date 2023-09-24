@@ -55,7 +55,7 @@ class TrailerflixRepository {
       where: { categoria: `${categoria}` },
     });
 
-    if (contenido.length === 0) throw new Error(`No se encontraron filmografias con categoria: ${categoria}`);
+    if (contenido.length === 0) throw new Error(`No se encontraron registros con categoria: ${categoria}`);
 
     return contenido;
   }
