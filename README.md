@@ -91,6 +91,17 @@ Proyecto final para el curso back-end dictado por UNTREF. Consiste en la creaci�
             "reparto": "Carl Weathers, Chris Bartlett, Giancarlo Esposito, Misty Rosas, Pedro Pascal, Rio Hackford",
             "genero": "Ciencia Ficción, Fantasía"
           },
+          {
+            "id": 2,
+            "titulo": "The Umbrella Academy",
+            "resumen": "La muerte de su padre reúne a unos hermanos distanciados y con extraordinarios poderes que descubren impactantes secretos y una amenaza que se cierne sobre la humanidad.",
+            "temporadas": 1,
+            "trailer": null,
+            "poster": "https://www.trailerflix.net/update/posters/4.jpg",
+            "categoria": "serie",
+            "reparto": "Aidan Gallagher, David Castañeda, Elliot Page, Emmy Raver-Lampman, Robert Sheehan, Tom Hopper",
+            "genero": "Ciencia Ficción, Fantasía"
+          },
       ]
   ```
   - Código HTTP: **500** *{ msg: error.message }*
@@ -102,7 +113,7 @@ Proyecto final para el curso back-end dictado por UNTREF. Consiste en la creaci�
   - URI:
     - http://127.0.0.1:8080/catalogo/26
   - Parámetro obligatorio de tipo URL:
-    - 26 *(tipo: integer. Indica el id del contenido multimedia que se requiere obtener)*
+    - **26** *(tipo: integer. Indica el id del contenido multimedia que se requiere obtener)*
 
 - Response: 
    - Código HTTP: **200** *Ok*
@@ -130,22 +141,24 @@ Proyecto final para el curso back-end dictado por UNTREF. Consiste en la creaci�
   - URI:
     - http://127.0.0.1:8080/catalogo/nombre/guason
   - Parámetro obligatorio de tipo URL:
-    - guason *(tipo: string. Indica el nombre o parte del nombre para buscar los registros coincidentes)*
+    - **guason** *(tipo: string. Indica el nombre o parte del nombre para buscar los registros coincidentes)*
 
 - Response: 
    - Código HTTP: **200** *Ok*
   ``` json
-      {
-        "id": 7,
-        "titulo": "Guasón",
-        "resumen": "Arthur Fleck (Phoenix) es un hombre ignorado por la sociedad, cuya motivación en la vida es hacer reír. Pero una serie de trágicos acontecimientos le llevarán a ver el mundo de otra forma. Película basada en el popular personaje de DC Comics Joker, conocido como archivillano de Batman, pero que en este film tomará un cariz más realista y oscuro.",
-        "temporadas": null,
-        "trailer": "https://www.youtube.com/embed/zAGVQLHvwOY",
-        "poster": "https://www.trailerflix.net/update/posters/7.jpg",
-        "categoria": "pelicula",
-        "reparto": "Brett Cullen, Frances Conroy, Joaquin Phoenix, Robert De Niro, Shea Whigham, Zazie Beetz",
-        "genero": "Crimen, Drama, Suspenso"
-      }
+      [      
+          {
+            "id": 7,
+            "titulo": "Guasón",
+            "resumen": "Arthur Fleck (Phoenix) es un hombre ignorado por la sociedad, cuya motivación en la vida es hacer reír. Pero una serie de trágicos acontecimientos le llevarán a ver el mundo de otra forma. Película basada en el popular personaje de DC Comics Joker, conocido como archivillano de Batman, pero que en este film tomará un cariz más realista y oscuro.",
+            "temporadas": null,
+            "trailer": "https://www.youtube.com/embed/zAGVQLHvwOY",
+            "poster": "https://www.trailerflix.net/update/posters/7.jpg",
+            "categoria": "pelicula",
+            "reparto": "Brett Cullen, Frances Conroy, Joaquin Phoenix, Robert De Niro, Shea Whigham, Zazie Beetz",
+            "genero": "Crimen, Drama, Suspenso"
+          },
+      ]
   ```
   - Código HTTP: **500** *{ msg: error.message }*
   - Código HTTP: **500** *El nombre no esta definido*
@@ -158,7 +171,7 @@ Proyecto final para el curso back-end dictado por UNTREF. Consiste en la creaci�
   - URI:
     - http://127.0.0.1:8080/catalogo/genero/accion
   - Parámetro obligatorio de tipo URL:
-    - accion *(tipo: string. Indica el genero de las peliculas o series que se desea filtrar)*
+    - **accion** *(tipo: string. Indica el genero de las peliculas y series que se desea filtrar)*
 
 - Response: 
    - Código HTTP: **200** *Ok*
@@ -175,6 +188,17 @@ Proyecto final para el curso back-end dictado por UNTREF. Consiste en la creaci�
             "reparto": "Chris Evans, Chris Hemsworth, Jeremy Renner, Mark Ruffalo, Robert Downey Jr., Scarlett Johansson",
             "genero": "Acción, Aventura, Sci-Fi"
           },
+          {
+            "id": 18,
+            "titulo": "Ava",
+            "resumen": "Ava es una mortífera asesina a sueldo que trabaja para una organización de operaciones encubiertas, que viaja por todo el mundo acabando con aquellos objetivos que nadie más puede derribar. Cuando uno de sus encargos sale mal, Ava tendrá que luchar por una vida.",
+            "temporadas": null,
+            "trailer": null,
+            "poster": "https://www.trailerflix.net/update/posters/18.jpg",
+            "categoria": "pelicula",
+            "reparto": "Colin Farrell, Geena Davis, Ioan Gruffudd, Jessica Chastain, John Malkovich",
+            "genero": "Acción, Drama, Suspenso"
+          },
       ]
   ```
   - Código HTTP: **500** *{ msg: error.message }*
@@ -188,7 +212,7 @@ Proyecto final para el curso back-end dictado por UNTREF. Consiste en la creaci�
   - URI:
     - http://127.0.0.1:8080/catalogo/categoria/pelicula
   - Parámetro obligatorio de tipo URL:
-    - pelicula *(tipo: string. Indica la categoria que se desea obtener: serie, pelicula o documental)*
+    - **pelicula** *(tipo: string. Indica la categoria que se desea obtener: serie, pelicula o documental)*
 
 - Response: 
    - Código HTTP: **200** *Ok*
@@ -204,6 +228,17 @@ Proyecto final para el curso back-end dictado por UNTREF. Consiste en la creaci�
             "categoria": "pelicula",
             "reparto": "David Harbour, Florence Pugh, O.T. Fagbenle, Rachel Weisz, Ray Winstone, Scarlett Johansson, William Hurt",
             "genero": "Acción, Aventura, Drama"
+          },
+          {
+            "id": 30,
+            "titulo": "The Martian",
+            "resumen": "Durante una misión a Marte de la nave tripulada Ares III, una fuerte tormenta se desata dando por desaparecido y muerto al astronauta Mark Watney (Matt Damon), sus compañeros toman la decisión de irse pero él ha sobrevivido. Está solo y sin apenas recursos en el planeta. Con muy pocos medios deberá recurrir a sus conocimientos, su sentido del humor y un gran instinto de supervivencia para lograr sobrevivir y comunicar a la Tierra que todavía está vivo esperando que acudan en su rescate.",
+            "temporadas": null,
+            "trailer": "https://www.youtube.com/embed/XvB58bCVfng",
+            "poster": "https://www.trailerflix.net/update/posters/30.jpg",
+            "categoria": "pelicula",
+            "reparto": "Jeff Daniels, Jessica Chastain, Kate Mara, Kristen Wiig, Matt Damon, Michael Peña, Sean Bean",
+            "genero": "Aventura, Drama, Sci-Fi"
           },
       ]
   ```
