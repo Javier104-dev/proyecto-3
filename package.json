@@ -7,6 +7,10 @@
     "start": "node ./src/app.js",
     "dev": "nodemon ./src/app.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Javier104-dev/proyecto-3.git"
+},
   "author": "Javier Villca",
   "license": "ISC",
   "dependencies": {
