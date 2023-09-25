@@ -5,7 +5,7 @@
 Proyecto final para el curso back-end dictado por UNTREF. Consiste en la creación de un servidor back utilizando JavaScript, Node.js y Express.js, el cual se utiliza para comunicarnos con una base de datos alojada en MySQL.
 
 ## Diagrama de entidad-relación
-![imagen](/docs/diagrama.png "Logo de API")
+![imagen](/docs/entidad-relacion.png "Logo de API")
 
 ## El proyecto utiliza entre otros módulos:
 
