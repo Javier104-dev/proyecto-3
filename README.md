@@ -2,21 +2,24 @@
 
 ## Introducción
 
-Proyecto final de back-end para UNTREF. Consiste en la creación de un servidor back utilizando JavaScript, Node.js y Express.js, el cual se utiliza para comunicarnos con una base de datos alojada en MySQL.
+Proyecto final para el curso back-end dictado por UNTREF. Consiste en la creación de un servidor back utilizando JavaScript, Node.js y Express.js, el cual se utiliza para comunicarnos con una base de datos alojada en MySQL.
 
-Utiliza entre otros modulos:
+## Diagrama de entidad-relación
+![imagen](/docs/diagrama.png "Logo de API")
+
+## El proyecto utiliza entre otros módulos:
 
 - [mysql2](https://www.npmjs.com/package/mysql2) para gertionar la base de datos MySQL.
 - [eslint](https://eslint.org/) para analizar potenciales errores y darle un formato mas seguro al código.
 - [rsdi](https://www.npmjs.com/package/rsdi) como inyector de dependencias, para implementar el principio de inversión de dependencias.
 
-## Instrucciones de instalacion
+## Instrucciones de instalación
 
-#### Requerimientos
-- Node.js v18.18.0
-- MySQL Workbench 8.0.34
-- GIT v2.42.0
-- IDE - Visual Studio Code v1.82.2
+  #### Requerimientos
+  - Node.js v18.18.0
+  - MySQL Workbench 8.0.34
+  - GIT v2.42.0
+  - IDE - Visual Studio Code v1.82.2
 
 #### Preparando el ambiente
 
@@ -33,15 +36,15 @@ Utiliza entre otros modulos:
 | Tipo | URI                                                 | Descripción                                                     |
 | ---- | --------------------------------------------------- | --------------------------------------------------------------- |
 | GET  | http://127.0.0.1:8080/categorias                    | Obtiene las categorias registradas en la db y su respectivo id  |
-| GET  | http://127.0.0.1:8080/catalogo                      | Obtiene todos los registros de series y peliculas de nuestra db |
+| GET  | http://127.0.0.1:8080/catalogo                      | Obtiene todos los registros de series y peliculas de la database |
 | GET  | http://127.0.0.1:8080/catalogo/:id                  | Devuelve un registro usando su id                               |
 | GET  | http://127.0.0.1:8080/catalogo/nombre/:nombre       | Devuelve los registros por su nombre o parte de su nombre       |
 | GET  | http://127.0.0.1:8080/catalogo/genero/:genero       | Filtra series y peliculas por un genero espeficico              |
 | GET  | http://127.0.0.1:8080/catalogo/categoria/:categoria | Filtra los registros por categoria                              |
 
-## Ejemplos de uso:
+# Explicación y ejemplos de uso:
 
-#### Método GET - Categorias:
+## Método GET - Categorias:
 - Request:
   - URI:
     - http://127.0.0.1:8080/categorias
@@ -68,7 +71,7 @@ Utiliza entre otros modulos:
 
 ---
 
-#### Método GET - Catalogo:
+## Método GET - Catalogo:
 - Request:
   - URI:
     - http://127.0.0.1:8080/catalogo
@@ -94,7 +97,7 @@ Utiliza entre otros modulos:
 
 ---
 
-#### Método GET - Por id:
+## Método GET - Por id:
 - Request:
   - URI:
     - http://127.0.0.1:8080/catalogo/26
@@ -122,7 +125,7 @@ Utiliza entre otros modulos:
 
 ---
 
-#### Método GET - Por nombre:
+## Método GET - Por nombre:
 - Request:
   - URI:
     - http://127.0.0.1:8080/catalogo/nombre/guason
@@ -150,7 +153,7 @@ Utiliza entre otros modulos:
 
 ---
 
-#### Método GET - Por genero:
+## Método GET - Por genero:
 - Request:
   - URI:
     - http://127.0.0.1:8080/catalogo/genero/accion
@@ -180,7 +183,7 @@ Utiliza entre otros modulos:
 
 ---
 
-#### Método GET - Por categoria:
+## Método GET - Por categoria:
 - Request:
   - URI:
     - http://127.0.0.1:8080/catalogo/categoria/pelicula
