@@ -1,5 +1,6 @@
 const { Op } = require('sequelize');
-const fromModelToEntity = require('../mapper/videoContentMapper');
+const vistaCatalogoModelToEntity = require('../mapper/vistaCatalogoMapper');
+const categoriaModelToEntitity = require('../mapper/categoriaMapper');
 
 class TrailerflixRepository {
 
@@ -15,12 +16,14 @@ class TrailerflixRepository {
     const categories = await this.categoriaModel.findAll({
       order: [['id', 'ASC']],
     });
-    return categories;
+
+    return categories.map(categoriaModelToEntitity);
   }
 
   async getCatalogo() {
     const catalog = await this.vistaCatalogoModel.findAll();
-    return catalog.map(fromModelToEntity);
+
+    return catalog.map(vistaCatalogoModelToEntity);
   }
 
   async getCatalogoId(id) {
@@ -28,7 +31,7 @@ class TrailerflixRepository {
 
     if (!content) throw new Error(`No se encontraron registros con el id: ${id}`);
 
-    return fromModelToEntity(content);
+    return vistaCatalogoModelToEntity(content);
   }
 
   async getCatalogoNombre(nombre) {
@@ -38,7 +41,7 @@ class TrailerflixRepository {
 
     if (content.length === 0) throw new Error(`No se encontraron series o peliculas con nombre: ${nombre}`);
 
-    return content.map(fromModelToEntity);
+    return content.map(vistaCatalogoModelToEntity);
   }
 
   async getCatalogoGenero(genero) {
@@ -48,7 +51,7 @@ class TrailerflixRepository {
 
     if (content.length === 0) throw new Error(`No se encontraron series o peliculas de genero: ${genero}`);
 
-    return content.map(fromModelToEntity);
+    return content.map(vistaCatalogoModelToEntity);
   }
 
   async getCatalogoCategoria(categoria) {
@@ -58,7 +61,7 @@ class TrailerflixRepository {
 
     if (content.length === 0) throw new Error(`No se encontraron registros con categoria: ${categoria}`);
 
-    return content.map(fromModelToEntity);
+    return content.map(vistaCatalogoModelToEntity);
   }
 }
 

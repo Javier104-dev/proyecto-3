@@ -1,4 +1,4 @@
-const VideoContent = require('../entity/VideoContent');
+const VistaCatalogo = require('../entity/VistaCatalogo');
 
 const fromModelToEntity = ({
   id,
@@ -10,7 +10,7 @@ const fromModelToEntity = ({
   categoria,
   reparto,
   genero,
-}) => new VideoContent(
+}) => new VistaCatalogo(
   id,
   titulo,
   resumen,

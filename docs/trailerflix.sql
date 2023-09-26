@@ -463,7 +463,7 @@ values
 
 
 --
--- Crear la view que usaremos para el proyecto
+-- Crear la view que usaremos en este proyecto
 --
 create view vistaCatalogo as
 select
@@ -477,8 +477,8 @@ B.tipo_categoria as categoria,
 (
 	select
     group_concat(concat(nombre, ' ', apellido) separator ', ')
-	from trailerflix.actor C
-	inner join trailerflix.reparto D on D.actor_id = C.id
+		from trailerflix.actor C
+		inner join trailerflix.reparto D on D.actor_id = C.id
     where D.catalogo_id = A.id
 ) as reparto,
 (

@@ -2,6 +2,7 @@ class TrailerflixService {
 
   constructor(trailerflixRepository) {
     this.trailerflixRepository = trailerflixRepository;
+    this.IMAGE_PATH = 'https://www.trailerflix.net/update';
   }
 
   async getCategorias() {
@@ -9,27 +10,46 @@ class TrailerflixService {
   }
 
   async getCatalogo() {
-    return this.trailerflixRepository.getCatalogo();
+    const content = await this.trailerflixRepository.getCatalogo();
+    content.map((e) => e.concatUrl(this.IMAGE_PATH));
+
+    return content;
   }
 
   async getCatalogoId(id) {
     if (!Number(id)) throw new Error('El id debe ser un numero valido');
-    return this.trailerflixRepository.getCatalogoId(id);
+
+    const content = await this.trailerflixRepository.getCatalogoId(id);
+    content.concatUrl(this.IMAGE_PATH);
+
+    return content;
   }
 
   async getCatalogoNombre(nombre) {
     if (!nombre) throw new Error('El nombre no esta definido');
-    return this.trailerflixRepository.getCatalogoNombre(nombre);
+
+    const content = await this.trailerflixRepository.getCatalogoNombre(nombre);
+    content.map((e) => e.concatUrl(this.IMAGE_PATH));
+
+    return content;
   }
 
   async getCatalogoGenero(genero) {
     if (!genero) throw new Error('El genero no esta definido');
-    return this.trailerflixRepository.getCatalogoGenero(genero);
+
+    const content = await this.trailerflixRepository.getCatalogoGenero(genero);
+    content.map((e) => e.concatUrl(this.IMAGE_PATH));
+
+    return content;
   }
 
   async getCatalogoCategoria(categoria) {
     if (!categoria) throw new Error('La categoria no esta definida');
-    return this.trailerflixRepository.getCatalogoCategoria(categoria);
+
+    const content = await this.trailerflixRepository.getCatalogoCategoria(categoria);
+    content.map((e) => e.concatUrl(this.IMAGE_PATH));
+
+    return content;
   }
 }
 
