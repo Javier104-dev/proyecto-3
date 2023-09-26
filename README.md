@@ -5,7 +5,7 @@
 Proyecto final para el curso back-end dictado por UNTREF. Consiste en la creación de un servidor back utilizando JavaScript, Node.js y Express.js, el cual se utiliza para comunicarnos con una base de datos alojada en MySQL.
 
 ## Diagrama de entidad-relación
-![imagen](/docs/entidad-relacion.png "Logo de API")
+![imagen](/docs/diagrama-entidad-relacion.png "Logo de API")
 
 ## El proyecto utiliza entre otros módulos:
 
@@ -24,6 +24,7 @@ Proyecto final para el curso back-end dictado por UNTREF. Consiste en la creaci�
 #### Preparando el ambiente
 
 - Descargar o clonar el repositorio en su equipo.
+- Abrir MySQL y ejecutar el script `trailerflix` que se encuentra en la carpeta `docs` para crear las *tablas*, cargar *entidades* y crear la *view* que usaremos para las consultas.
 - Correr `npm install` para instalar las dependencias requeridas.
 - Crear un archivo `.env` en la raíz del proyecto usando como guia `.env.dist`.
 - Usar el comando `npm start` para iniciar el servidor y usarlo.
