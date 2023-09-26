@@ -1,4 +1,5 @@
 const { Op } = require('sequelize');
+const fromModelToEntity = require('../mapper/videoContentMapper');
 
 class TrailerflixRepository {
 
@@ -18,46 +19,46 @@ class TrailerflixRepository {
   }
 
   async getCatalogo() {
-    const catalogo = await this.vistaCatalogoModel.findAll();
-    return catalogo;
+    const catalog = await this.vistaCatalogoModel.findAll();
+    return catalog.map(fromModelToEntity);
   }
 
   async getCatalogoId(id) {
-    const contenido = await this.vistaCatalogoModel.findByPk(id);
+    const content = await this.vistaCatalogoModel.findByPk(id);
 
-    if (!contenido) throw new Error(`No se encontraron registros con el id: ${id}`);
+    if (!content) throw new Error(`No se encontraron registros con el id: ${id}`);
 
-    return contenido;
+    return fromModelToEntity(content);
   }
 
   async getCatalogoNombre(nombre) {
-    const contenido = await this.vistaCatalogoModel.findAll({
+    const content = await this.vistaCatalogoModel.findAll({
       where: { titulo: { [Op.like]: `%${nombre}%` } },
     });
 
-    if (contenido.length === 0) throw new Error(`No se encontraron series o peliculas con nombre: ${nombre}`);
+    if (content.length === 0) throw new Error(`No se encontraron series o peliculas con nombre: ${nombre}`);
 
-    return contenido;
+    return content.map(fromModelToEntity);
   }
 
   async getCatalogoGenero(genero) {
-    const contenido = await this.vistaCatalogoModel.findAll({
+    const content = await this.vistaCatalogoModel.findAll({
       where: { genero: { [Op.like]: `%${genero}%` } },
     });
 
-    if (contenido.length === 0) throw new Error(`No se encontraron series o peliculas de genero: ${genero}`);
+    if (content.length === 0) throw new Error(`No se encontraron series o peliculas de genero: ${genero}`);
 
-    return contenido;
+    return content.map(fromModelToEntity);
   }
 
   async getCatalogoCategoria(categoria) {
-    const contenido = await this.vistaCatalogoModel.findAll({
+    const content = await this.vistaCatalogoModel.findAll({
       where: { categoria: `${categoria}` },
     });
 
-    if (contenido.length === 0) throw new Error(`No se encontraron registros con categoria: ${categoria}`);
+    if (content.length === 0) throw new Error(`No se encontraron registros con categoria: ${categoria}`);
 
-    return contenido;
+    return content.map(fromModelToEntity);
   }
 }
 

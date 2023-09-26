@@ -1,5 +1,3 @@
-const { concatUrl } = require('../../config/config');
-
 class TrailerflixController {
 
   constructor(trailerflixService) {
@@ -19,8 +17,8 @@ class TrailerflixController {
 
   async getCatalogo(req, res, next) {
     try {
-      const catalogo = await this.trailerflixService.getCatalogo();
-      res.status(200).json(catalogo.map(concatUrl));
+      const catalog = await this.trailerflixService.getCatalogo();
+      res.status(200).json(catalog);
 
     } catch (error) {
       res.status(500);
@@ -31,8 +29,8 @@ class TrailerflixController {
   async getCatalogoId(req, res, next) {
     const { id } = req.params;
     try {
-      const contenido = await this.trailerflixService.getCatalogoId(Number(id));
-      res.status(200).json(concatUrl(contenido));
+      const content = await this.trailerflixService.getCatalogoId(Number(id));
+      res.status(200).json(content);
 
     } catch (error) {
       res.status(500);
@@ -43,8 +41,8 @@ class TrailerflixController {
   async getCatalogoNombre(req, res, next) {
     const { nombre } = req.params;
     try {
-      const contenido = await this.trailerflixService.getCatalogoNombre(nombre);
-      res.status(200).json(contenido.map(concatUrl));
+      const content = await this.trailerflixService.getCatalogoNombre(nombre);
+      res.status(200).json(content);
 
     } catch (error) {
       res.status(500);
@@ -55,8 +53,8 @@ class TrailerflixController {
   async getCatalogoGenero(req, res, next) {
     const { genero } = req.params;
     try {
-      const contenido = await this.trailerflixService.getCatalogoGenero(genero);
-      res.status(200).json(contenido.map(concatUrl));
+      const content = await this.trailerflixService.getCatalogoGenero(genero);
+      res.status(200).json(content);
 
     } catch (error) {
       res.status(500);
@@ -67,8 +65,8 @@ class TrailerflixController {
   async getCatalogoCategoria(req, res, next) {
     const { categoria } = req.params;
     try {
-      const contenido = await this.trailerflixService.getCatalogoCategoria(categoria);
-      res.status(200).json(contenido.map(concatUrl));
+      const content = await this.trailerflixService.getCatalogoCategoria(categoria);
+      res.status(200).json(content);
 
     } catch (error) {
       res.status(500);
