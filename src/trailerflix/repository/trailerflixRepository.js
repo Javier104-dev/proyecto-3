@@ -39,7 +39,7 @@ class TrailerflixRepository {
       where: { titulo: { [Op.like]: `%${nombre}%` } },
     });
 
-    if (content.length === 0) throw new Error(`No se encontraron series o peliculas con nombre: ${nombre}`);
+    if (!content.length) throw new Error(`No se encontraron series o peliculas con nombre: ${nombre}`);
 
     return content.map(vistaCatalogoModelToEntity);
   }
@@ -49,7 +49,7 @@ class TrailerflixRepository {
       where: { genero: { [Op.like]: `%${genero}%` } },
     });
 
-    if (content.length === 0) throw new Error(`No se encontraron series o peliculas de genero: ${genero}`);
+    if (!content.length) throw new Error(`No se encontraron series o peliculas de genero: ${genero}`);
 
     return content.map(vistaCatalogoModelToEntity);
   }
@@ -59,7 +59,7 @@ class TrailerflixRepository {
       where: { categoria: `${categoria}` },
     });
 
-    if (content.length === 0) throw new Error(`No se encontraron registros con categoria: ${categoria}`);
+    if (!content.length) throw new Error(`No se encontraron registros con categoria: ${categoria}`);
 
     return content.map(vistaCatalogoModelToEntity);
   }

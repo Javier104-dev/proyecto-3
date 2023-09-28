@@ -35,7 +35,7 @@ class TrailerflixService {
   }
 
   async getCatalogoGenero(genero) {
-    if (!genero) throw new Error('El genero no esta definido');
+    if (!Number.isNaN(Number(genero))) throw new Error('El genero no puede ser de tipo numero');
 
     const content = await this.trailerflixRepository.getCatalogoGenero(genero);
     content.map((e) => e.concatUrl(this.IMAGE_PATH));
@@ -44,7 +44,7 @@ class TrailerflixService {
   }
 
   async getCatalogoCategoria(categoria) {
-    if (!categoria) throw new Error('La categoria no esta definida');
+    if (!Number.isNaN(Number(categoria))) throw new Error('La categoria no puede ser de tipo numero');
 
     const content = await this.trailerflixRepository.getCatalogoCategoria(categoria);
     content.map((e) => e.concatUrl(this.IMAGE_PATH));

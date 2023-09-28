@@ -203,7 +203,7 @@ Proyecto final Desarrollador Back End dictado por UNTREF. Consiste en la creaci�
       ]
   ```
   - Código HTTP: **500** *{ msg: error.message }*
-  - Código HTTP: **500** *El genero no esta definido*
+  - Código HTTP: **500** *El genero no puede ser de tipo numero*
   - Código HTTP: **500** *No se encontraron series o peliculas de genero: ${genero}*
 
 ---
@@ -244,5 +244,5 @@ Proyecto final Desarrollador Back End dictado por UNTREF. Consiste en la creaci�
       ]
   ```
   - Código HTTP: **500** *{ msg: error.message }*
-  - Código HTTP: **500** *La categoria no esta definida*
+  - Código HTTP: **500** *La categoria no puede ser de tipo numero*
   - Código HTTP: **500** *No se encontraron registros con categoria: ${categoria}*
