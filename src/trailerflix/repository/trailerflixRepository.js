@@ -56,7 +56,7 @@ class TrailerflixRepository {
 
   async getCatalogoCategoria(categoria) {
     const content = await this.vistaCatalogoModel.findAll({
-      where: { categoria: `${categoria}` },
+      where: { categoria },
     });
 
     if (!content.length) throw new Error(`No se encontraron registros con categoria: ${categoria}`);
