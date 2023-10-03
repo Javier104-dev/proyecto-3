@@ -46,8 +46,8 @@ class VistaCatalogoModel extends Model {
       },
       {
         sequelize: sequelizeInstance,
-        tableName: 'VistaCatalogo',
-        modelName: 'vistaCatalogo',
+        modelName: 'VistaCatalogo',
+        tableName: 'vistaCatalogo',
         underscored: true,
         timestamps: false,
       },

@@ -20,8 +20,8 @@ class CategoriaModel extends Model {
       },
       {
         sequelize: sequelizeInstance,
-        tableName: 'Categoria',
-        modelName: 'categoria',
+        modelName: 'Categoria',
+        tableName: 'categoria',
         underscored: true,
         timestamps: false,
       },
